@@ -9,7 +9,7 @@ export class MiRouter{
     init(){}
 
     getRouter(){
-        return this.router
+        return this.router; // funcionaria como la parte export en un router tradicional
     }
     
     get(ruta, permisos, ...funciones){ 
@@ -17,7 +17,8 @@ export class MiRouter{
         // cuando se lo llama a get desde el router o una clase que hereda el router 
         // por ej: get(1,2,3,4,5)
         // 1 -> ruta
-        // 2,3,4,5 -> a permisos
+        // 2 -> a permisos
+        // [3,4,5] -> a funciones
     
         console.log({ruta, funciones})
         this.router.get(ruta, this.misRespuestas, this.acceso(permisos) , funciones)

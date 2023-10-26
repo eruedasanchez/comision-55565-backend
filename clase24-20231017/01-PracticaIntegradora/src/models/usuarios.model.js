@@ -12,3 +12,5 @@ export const usuariosModelo=mongoose.model('usuarios', new mongoose.Schema({
 },{
    timestamps:true 
 }))
+
+// timestamps:true agrega la fecha de creacion y modificacion

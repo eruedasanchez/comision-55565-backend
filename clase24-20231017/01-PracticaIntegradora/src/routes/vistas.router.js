@@ -32,8 +32,5 @@ router.get('/login',(req,res)=>{
 })
 
 router.get('/perfil',(req,res)=>{
-
-    
-
     res.status(200).render('perfil')
 })

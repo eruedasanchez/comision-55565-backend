@@ -8,13 +8,13 @@ export class UsuariosRouter extends MiRouter{
     }
 
     init(){
-        this.get('/', ['USUARIOS', 'ADMIN'],this.mid01,(req, res, next)=>{
+        this.get('/', ['USUARIOS', 'ADMIN'], this.mid01, (req, res, next) => {
             console.log('pasó por un middleware...!!!')
             next()
-        },(req, res)=>{
-            // codigo...
+        }, (req, res)=>{
+            // codigo como en un router tradicional...
             // res.send("mmm... funcionará todo esto...???")
-            res.success("mmm... funcionará todo esto...???")
+            res.success("mmm... funcionará todo esto...???") // se utiliza el this.respuestas para res.success
         })
 
         this.post('/', ['PUBLIC'], (req, res)=>{

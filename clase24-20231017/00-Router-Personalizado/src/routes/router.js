@@ -46,12 +46,19 @@ export class MiRouter{
         return (req, res, next)=>{
             if(permisos.includes('PUBLIC')) return next()
 
+            // TO DO:
             // acceder al req.headers.authorization o a las cookies
             // decodificar token, obtener usuario (incluyendo rol)
             // if(permisos.includes(usuario.rol.toUpperCase())) return next()
             // si no está incluido el rol entre los permisos, que responda con error Autorizacion
+
+            // Obtenemos el token para verificar el rol del usuario y preguntar si los permisos
+            // incluyen al rol del usuario
             if(!req.cookies.coderCookie) return res.errorAutenticacion('No existe Token')
+            
             let token=req.cookies.coderCookie
+
+            // decodificacion del token
             jwt.verify(token, "coder123", (err, credencial)=>{
                 if(err){
                     return res.errorAutenticacion('Token invalido')

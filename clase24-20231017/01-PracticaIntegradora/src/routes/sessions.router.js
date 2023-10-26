@@ -4,8 +4,16 @@ export const router=Router()
 
 router.post('/registro', function(req, res, next) {
     passport.authenticate('registro', function(err, user, info, status) {
-      if (err) { return next(err) }
-      if (!user) { return res.redirect(`/registro?error=${info.message?info.message:info.toString()}`) }
+      if (err) { 
+        console.log("error", err);
+        return next(err)
+      }
+      
+      if (!user) { 
+        console.log("infomsg", info.message)
+        console.log("infomsgstring", info.toString())
+        return res.redirect(`/registro?error=${info.message?info.message:info.toString()}`) 
+      }
     //   res.redirect('/account');
         req.user=user
         return next()
