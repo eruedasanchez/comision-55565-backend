@@ -1,5 +1,5 @@
 import { config } from "../config/config.js";
-let dao
+let dao;
 
 switch (config.PERSISTENCE) {
     case "FS":

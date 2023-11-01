@@ -7,12 +7,13 @@ const usuariosModelo=mongoose.model("usuarios",new mongoose.Schema({
 // 'mongodb+srv://coderhouse:coderhouse@cluster0.5rl5n6j.mongodb.net/?retryWrites=true&w=majority&dbName=clase26'
 
 class MongoSingleton{
-    static #instancia
+    static #instancia // solo para que se genere una instancia
 
     constructor(url){
         mongoose.connect(url)
     }
 
+    // los metodos static permiten no instanciarlos, es decir, ejecutar MongoSingleton.NOMBRE_METODO
     static conectarDB(url){
         if(this.#instancia){
             console.log("Conexion a DB establecida previamente")

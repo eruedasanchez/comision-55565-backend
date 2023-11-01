@@ -11,7 +11,7 @@ const suma=(a,b)=>{
     return a+b
 }
 
-console.log(suma(4,5))
+// console.log(suma(4,5))
 
 const decoradorLog=(funcion)=>{
     return function(...params){ // los "..." son aquí el operador rest

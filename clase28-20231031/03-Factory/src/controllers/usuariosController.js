@@ -13,7 +13,6 @@ async function getUsers(req,res){
         return res.status(500).json({
             error:"Error inesperado", detalle:error.message
         })
-      
     }
 }
 
@@ -29,7 +28,6 @@ async function getUserById(req,res){
         return res.status(500).json({
             error:"Error inesperado", detalle:error.message
         })
-      
     }
 }
 
